@@ -1,0 +1,57 @@
+.cursorDot {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s, background-color 0.2s;
+}
+
+.cursorOutline {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--color-primary-light);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+              height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+              background-color 0.2s ease-out, 
+              border-color 0.2s ease-out;
+  /* Add slight spring physics feel to movement */
+  transition-property: width, height, background-color, border-color, transform;
+  transition-duration: 0.1s;
+}
+
+/* Hovering over links/buttons */
+.cursorDot.hovering {
+  width: 0px;
+  height: 0px;
+  opacity: 0;
+}
+
+.cursorOutline.hovering {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(230, 81, 0, 0.08); /* Light orange tint */
+  border-color: var(--color-primary);
+  backdrop-filter: blur(2px);
+}
+
+/* Clicking */
+.cursorOutline.clicking {
+  width: 30px;
+  height: 30px;
+  background-color: rgba(230, 81, 0, 0.2);
+}
+
+@media (pointer: coarse) {
+  .cursorDot, .cursorOutline {
+    display: none !important;
+  }
+}

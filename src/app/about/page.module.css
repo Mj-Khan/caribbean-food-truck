@@ -1,0 +1,111 @@
+.aboutPage {
+  background-color: var(--color-background);
+  min-height: calc(100vh - 80px);
+  padding-bottom: var(--spacing-xl);
+}
+
+/* Header Section */
+.aboutHeader {
+  background: var(--color-secondary); /* Tropical Green */
+  color: white;
+  padding: 6rem 0;
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.headerContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.pageTitle {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: white;
+  margin-bottom: var(--spacing-sm);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.pageSubtitle {
+  font-size: 1.25rem;
+  color: #e8f5e9;
+}
+
+/* Main Content Grid */
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xl);
+}
+
+@media (min-width: 992px) {
+  .aboutGrid {
+    grid-template-columns: 3fr 2fr;
+  }
+}
+
+/* Story Section */
+.storySection {
+  padding-right: 0;
+}
+
+@media (min-width: 992px) {
+  .storySection {
+    padding-right: var(--spacing-lg);
+  }
+}
+
+.sectionTitle {
+  font-size: 2.25rem;
+  color: var(--color-text-main);
+  margin-bottom: var(--spacing-md);
+  position: relative;
+  display: inline-block;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background-color: var(--color-primary);
+  border-radius: 2px;
+}
+
+.textBlock {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--color-text-muted);
+}
+
+.textBlock p {
+  margin-bottom: var(--spacing-md);
+}
+
+/* Philosophy Section */
+.philosophySection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.cardInfo {
+  background: white;
+  padding: var(--spacing-lg);
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  border-top: 4px solid var(--color-primary);
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  color: var(--color-text-main);
+  margin-bottom: var(--spacing-sm);
+}
+
+.cardText {
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
